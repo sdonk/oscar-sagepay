@@ -168,3 +168,8 @@ Dashboard
             'url_name': 'sagepay-transaction-list'
         },
     ]
+
+Define settings
+---------------
+
+SAGEPAY_VENDOR **must** be defined in either the django or sagepay settings.py file.

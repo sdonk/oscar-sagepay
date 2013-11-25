@@ -1,3 +1,4 @@
+========
 Settings
 ========
 
@@ -47,7 +48,7 @@ Default test: ``'GBP'``
 
 Default live: ``'https://test.sagepay.com/gateway/service/vspserver-register.vsp'``
 
-Default test: ``'https://test.sagepay.com/gateway/service/vspserver-register.vsp'``
+Default test: ``'https://live.sagepay.com/gateway/service/vspserver-register.vsp'``
 
 The SagePay server URL, it doesn't need to be changed.
 

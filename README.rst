@@ -52,5 +52,5 @@ ToDo
 
 
 .. _Django Oscar: http://oscarcommerce.com/
-.. _SagePay server inframe integration: http://www.sagepay.co.uk/support/find-an-integration-document
+.. _SagePay server inframe integration: http://www.sagepay.co.uk/support/find-an-integration-document/server-inframe-integration-documents
 .. _Detailed documentation: http://oscar-sagepay.readthedocs.org/en/latest/
