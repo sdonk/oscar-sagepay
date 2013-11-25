@@ -157,7 +157,7 @@ Update urls.py
 Dashboard
 ---------
 
-.. image: http://i.imgur.com/Da32fPA.png
+.. image:: http://i.imgur.com/Da32fPA.png
     :alt: Transactions admin dashboard
     :align: center
 
