@@ -9,15 +9,15 @@ Install the plugin
 
     Work in a `virtual environment`_!
 
-1. Install django-oscar-sagepay using pip or clone the repository and use setup.py:
+1. Install oscar-sagepay using pip or clone the repository and use setup.py:
 
 .. code-block:: bash
 
-    pip install oscar-sagepay==1.0
+    pip install oscar-sagepay==0.1
 
 .. code-block:: bash
 
-    git clone https://github.com/sdonk/django-oscar-sagepay.git
+    git clone https://github.com/sdonk/oscar-sagepay.git
     cd oscar-sagepay
     python setup.py install
 
