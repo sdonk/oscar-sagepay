@@ -99,9 +99,9 @@ if "%1" == "qthelp" (
 	echo.
 	echo.Build finished; now you can run "qcollectiongenerator" with the ^
 .qhcp project file in %BUILDDIR%/qthelp, like this:
-	echo.^> qcollectiongenerator %BUILDDIR%\qthelp\djagno-oscar-sagepay.qhcp
+	echo.^> qcollectiongenerator %BUILDDIR%\qthelp\OscarSagePay.qhcp
 	echo.To view the help file:
-	echo.^> assistant -collectionFile %BUILDDIR%\qthelp\djagno-oscar-sagepay.ghc
+	echo.^> assistant -collectionFile %BUILDDIR%\qthelp\OscarSagePay.ghc
 	goto end
 )
 

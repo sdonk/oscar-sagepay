@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from setuptools import setup, find_packages
 
-from source.sagepay import VERSION
+from code.sagepay import VERSION
 
 
 MIN_OSCAR_VERSION = (0, 5)

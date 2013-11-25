@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
-# djagno-oscar-sagepay documentation build configuration file, created by
-# sphinx-quickstart on Mon Nov 25 10:06:28 2013.
+# Oscar SagePay documentation build configuration file, created by
+# sphinx-quickstart on Mon Nov 25 13:42:42 2013.
 #
 # This file is execfile()d with the current directory set to its containing dir.
 #
@@ -12,7 +12,9 @@
 # serve to show the default.
 
 import sys, os
-sys.path.insert(0, os.path.abspath('../../source/sagepay/'))
+sys.path.insert(0, os.path.abspath('../../code'
+                                   ''
+                                   '/sagepay/'))
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -26,7 +28,7 @@ sys.path.insert(0, os.path.abspath('../../source/sagepay/'))
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ['sphinx.ext.autodoc', 'sphinx.ext.doctest', 'sphinx.ext.todo', 'sphinx.ext.coverage', 'sphinx.ext.viewcode']
+extensions = ['sphinx.ext.autodoc', 'sphinx.ext.coverage', 'sphinx.ext.viewcode']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -41,7 +43,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'djagno-oscar-sagepay'
+project = u'Oscar SagePay'
 copyright = u'2013, Alessandro De Noia'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -165,7 +167,7 @@ html_static_path = ['_static']
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'oscar-sagepaydoc'
+htmlhelp_basename = 'OscarSagePaydoc'
 
 
 # -- Options for LaTeX output --------------------------------------------------
@@ -184,7 +186,7 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'oscar-sagepay.tex', u'oscar-sagepay Documentation',
+  ('index', 'OscarSagePay.tex', u'Oscar SagePay Documentation',
    u'Alessandro De Noia', 'manual'),
 ]
 
@@ -214,7 +216,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'oscar-sagepay', u'djagno-oscar-sagepay Documentation',
+    ('index', 'oscarsagepay', u'Oscar SagePay Documentation',
      [u'Alessandro De Noia'], 1)
 ]
 
@@ -228,8 +230,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'oscar-sagepay', u'oscar-sagepay Documentation',
-   u'Alessandro De Noia', 'oscar-sagepay', 'One line description of project.',
+  ('index', 'OscarSagePay', u'Oscar SagePay Documentation',
+   u'Alessandro De Noia', 'OscarSagePay', 'One line description of project.',
    'Miscellaneous'),
 ]
 

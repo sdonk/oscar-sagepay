@@ -77,17 +77,17 @@ qthelp:
 	@echo
 	@echo "Build finished; now you can run "qcollectiongenerator" with the" \
 	      ".qhcp project file in $(BUILDDIR)/qthelp, like this:"
-	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/djagno-oscar-sagepay.qhcp"
+	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/OscarSagePay.qhcp"
 	@echo "To view the help file:"
-	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/djagno-oscar-sagepay.qhc"
+	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/OscarSagePay.qhc"
 
 devhelp:
 	$(SPHINXBUILD) -b devhelp $(ALLSPHINXOPTS) $(BUILDDIR)/devhelp
 	@echo
 	@echo "Build finished."
 	@echo "To view the help file:"
-	@echo "# mkdir -p $$HOME/.local/share/devhelp/djagno-oscar-sagepay"
-	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/djagno-oscar-sagepay"
+	@echo "# mkdir -p $$HOME/.local/share/devhelp/OscarSagePay"
+	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/OscarSagePay"
 	@echo "# devhelp"
 
 epub:

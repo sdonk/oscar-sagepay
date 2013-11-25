@@ -30,7 +30,7 @@ This package is release under the GPLv3 license.
 Installation
 ------------
 
-Detailed documentation is in the "docs" directory.
+`Detailed documentation`_
 
 
 Changelog
@@ -53,3 +53,4 @@ ToDo
 
 .. _Django Oscar: http://oscarcommerce.com/
 .. _SagePay server inframe integration: http://www.sagepay.co.uk/support/find-an-integration-document
+.. _Detailed documentation: http://oscar-sagepay.readthedocs.org/en/latest/

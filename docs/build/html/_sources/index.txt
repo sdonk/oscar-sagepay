@@ -11,10 +11,10 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-    workflow.rst
-    installation.rst
-    settings.rst
-    error.rst
+   workflow
+   installation
+   settings
+   errors
 
 
 Indices and tables
