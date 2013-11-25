@@ -80,6 +80,7 @@ Override Oscar's checkout views
 -------------------------------
 
 **views.py:**
+
 .. code-block:: python
 
     from sagepay.views import PayDetailsView, ThankYouView, ShippingAddressView
@@ -96,6 +97,7 @@ Override Oscar's checkout views
 
 
 **app.py:**
+
 .. code-block:: python
 
     from oscar.apps.checkout.app import CheckoutApplication as CoreCheckoutApplication
@@ -113,6 +115,7 @@ Override Oscar's checkout views
 Override Oscar's customer views
 -------------------------------
 **app.py**
+
 .. code-block:: python
 
     from django.conf.urls import patterns, url
@@ -155,6 +158,7 @@ Dashboard
 ---------
 
 **settings.py**
+
 .. code-block:: python
 
     OSCAR_DASHBOARD_NAVIGATION += [
