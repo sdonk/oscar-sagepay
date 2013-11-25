@@ -14,10 +14,9 @@ At the current version it's possible to complete a transaction and securely save
     :alt: Saved cards in the customer account page
     :align: center
 
-
 It provides a new dashboard entry as well, to list all the transactions:
 
-.. image: http://i.imgur.com/PYE0Swg.png
+.. image: http://i.imgur.com/Da32fPA.png
     :alt: Transactions admin dashboard
     :align: center
 

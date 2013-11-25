@@ -157,6 +157,10 @@ Update urls.py
 Dashboard
 ---------
 
+.. image: http://i.imgur.com/Da32fPA.png
+    :alt: Transactions admin dashboard
+    :align: center
+
 **settings.py**
 
 .. code-block:: python
@@ -168,6 +172,7 @@ Dashboard
             'url_name': 'sagepay-transaction-list'
         },
     ]
+
 
 Define settings
 ---------------
