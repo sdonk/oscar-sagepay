@@ -1,0 +1,14 @@
+{%  extends 'checkout/checkout.html' %}
+
+{% block checkout-nav %}
+    {% include 'checkout/nav.html' with step=3 %}
+{% endblock %}
+
+
+{% block content %}
+
+<iframe height="800" width="100%" id="def_sagepay_iframe" src="https://test.sagepay.com/gateway/service/cardselection?vpstxid={{ tx_id }}"></iframe>
+
+{% endblock %}
+
+

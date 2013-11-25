@@ -1,0 +1,33 @@
+{% extends "checkout/checkout.html" %}
+{% load i18n %}
+
+{% block title %}
+{% trans "Order preview" %} | {{ block.super }}
+{% endblock %}
+
+{% block body_id %}defecom{% endblock %}
+{% block body_class %}checkout preview{% endblock %}
+
+{% block checkout-nav %}
+    {% include 'checkout/nav.html' with step=4 %}
+{% endblock %}
+
+{% block order_contents_actions %}
+{% endblock %}
+
+{% block place_order %}
+<form method="post" action="{% url checkout:preview %}" id="place-order-form">
+    {# Store payment forms but hidden so they get resubmitted #}
+        <div style="display:none">
+                <input type="hidden" name="action" value="place_order" />
+                {{ billing_address_form.as_p }}
+        </div>
+	{% csrf_token %}
+    <div class="form-actions">
+        <div class="back_step">
+            <a href="{% url basket:summary %}" class="">{% trans "Edit order" %}</a>
+        </div>
+        <button id='place-order' type="submit" class="pull-right btn btn-primary btn-large btn-full js-disable-on-click" data-loading-text="{% trans 'Submitting...' %}">{% trans "Place order" %}</button>
+    </div>
+</form>
+{% endblock place_order %}

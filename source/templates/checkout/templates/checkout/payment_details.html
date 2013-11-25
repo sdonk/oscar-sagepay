@@ -1,0 +1,53 @@
+{% extends "checkout/checkout.html" %}
+{% load currency_filters %}
+{% load i18n %}
+
+{% block title %}
+{% trans "Payment details" %} | {{ block.super }}
+{% endblock %}
+
+{% block checkout-nav %}
+         {% include 'checkout/nav.html' with step=3 %}
+{% endblock %}
+
+{% block order_contents %}{% endblock %}
+{% block shipping_address %}{% endblock %}
+{% block shipping_method %}{% endblock %}
+{% block payment_method %}{% endblock %}
+
+{% block payment_details %}
+    {% block payment_details_content %}
+     <form method="post" action="{% url checkout:preview %}" class="form-horizontal">
+        {% csrf_token %}
+        <h3>{% trans "Billing address for a new card" %}</h3>
+        <div class="well well-info">
+            {% include "partials/form_fields.html" with form=billing_address_form %}
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-large btn-primary">Continue</button>
+            {% trans "or" %} <a href="{% url basket:summary %}">{% trans "return to basket" %}</a>
+        </div>
+     </form>
+
+    {% if saved_cards %}
+        <h4>{% trans "Saved cards" %}</h4>
+        {% if credit_cards %}
+        {% for card in credit_cards %}
+            <form method="post" action="{% url checkout:preview %}">
+                <div style="display:none">
+                    <input type="hidden" name="action" value="saved_card" />
+                    <input id="id_token" type="text" name="token" maxlength="38" value="{{ card.token }}"/>
+                </div>
+            {% csrf_token %}
+            {{ card.summary }}
+            <div >
+                <button type="submit" class="btn btn-large btn-primary">Use this card</button>
+            </div>
+        </form>
+        {% endfor %}
+        {% else %}
+            No cards saved yet
+        {% endif %}
+     {% endif %}
+     {% endblock payment_details_content %}
+{% endblock payment_details %}

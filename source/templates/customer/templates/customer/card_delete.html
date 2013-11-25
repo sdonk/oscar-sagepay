@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% load i18n %}
+
+{% block title %}
+{% trans 'Delete card?' %} | {{ block.super }}
+{% endblock %}
+
+{% block body_class %}account-pages{% endblock %}
+
+{% block breadcrumbs %}
+<ul class="breadcrumb">
+    <li>
+        <a href="{% url promotions:home %}">{% trans 'Home' %}</a>
+        <span class="divider">/</span>
+    </li>
+    <li>
+        <a href="{% url customer:summary %}">{% trans 'Account' %}</a>
+        <span class="divider">/</span>
+    </li>
+    <li>
+        <a href="{% url customer:address-list %}">{% trans 'Address book' %}</a>
+        <span class="divider">/</span>
+    </li>
+    <li class="active">{% trans 'Delete card?' %}</li>
+</ul>
+{% endblock %}
+
+{% block headertext %}
+{% trans 'Account' %}
+{% endblock %}
+
+{% block subnavigation %}
+    {% include "partials/nav_profile.html" with cards="active" %}
+{% endblock %}
+
+{% block subheader %}
+<div class="sub-header">
+    <h2>{% trans 'Delete card?' %}</h2>
+</div>
+{% endblock subheader %}
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    <p>{% trans 'Are you sure you want to delete this card?' %}</p>
+    {{ object.summary }}
+
+    {% include "partials/form_fields.html" with form=form %}
+    <div class="form-actions">
+        <button type="submit" value="Delete card" class="btn btn-danger btn-large">{% trans 'Delete' %}</button> {% trans 'or' %} <a href="{% url customer:summary %}#cards">{% trans 'cancel' %}</a>
+    </div>
+</form>
+{% endblock content %}
