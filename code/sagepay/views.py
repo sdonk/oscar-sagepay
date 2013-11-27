@@ -18,7 +18,6 @@ from oscar.apps.checkout.views import PaymentDetailsView as OscarPaymentDetailsV
 from oscar.apps.checkout.views import ThankYouView as OscarThankYouView
 from oscar.apps.checkout.views import ShippingAddressView as OscarShippingAddressView
 from oscar.apps.checkout.views import CheckoutSessionMixin
-from oscar.apps.checkout.mixins import OrderPlacementMixin
 from oscar.apps.payment import models
 
 Basket = get_model('basket', 'Basket')
@@ -36,6 +35,7 @@ RedirectRequired, UnableToTakePayment, PaymentError = get_classes(
     'payment.exceptions', ['RedirectRequired', 'UnableToTakePayment', 'PaymentError'])
 UnableToPlaceOrder = get_class('order.exceptions', 'UnableToPlaceOrder')
 CheckoutSessionData = get_class('checkout.utils', 'CheckoutSessionData')
+OrderPlacementMixin = get_class('checkout.mixins', 'OrderPlacementMixin')
 
 SAVE_CARD = getattr(localsettings, 'SAGEPAY_SAVE_CARD', False)
 
