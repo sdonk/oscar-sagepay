@@ -18,7 +18,7 @@ from oscar.apps.checkout.views import PaymentDetailsView as OscarPaymentDetailsV
 from oscar.apps.checkout.views import ThankYouView as OscarThankYouView
 from oscar.apps.checkout.views import ShippingAddressView as OscarShippingAddressView
 from oscar.apps.checkout.views import CheckoutSessionMixin
-from .mixins import OrderPlacementMixin
+from oscar.apps.checkout.mixins import OrderPlacementMixin
 from oscar.apps.payment import models
 
 Basket = get_model('basket', 'Basket')
