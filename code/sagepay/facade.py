@@ -53,6 +53,7 @@ class Facade(object):
             delivery_address2 = billing_address['line2']
             delivery_city = billing_address['line4']
             delivery_postcode = billing_address['postcode']
+            delivery_country = CountryCode.objects.get(name__iexact=billing_address['country'].printable_name)
         else:
             delivery_firstnames=shipping_address.first_name
             delivery_surname=shipping_address.last_name
@@ -60,6 +61,7 @@ class Facade(object):
             delivery_address2=shipping_address.line2
             delivery_city=shipping_address.line4
             delivery_postcode=shipping_address.postcode
+            delivery_country = CountryCode.objects.get(name__iexact=shipping_address.country.printable_name)
 
         # the sagepay transaction must be saved in the database before proceeding
         transaction = SagePayTransaction(
@@ -75,7 +77,7 @@ class Facade(object):
                 delivery_address2=delivery_address2,
                 delivery_city=delivery_city,
                 delivery_postcode=delivery_postcode,
-                delivery_country=CountryCode.objects.get(name__iexact=shipping_address.country.printable_name),
+                delivery_country=delivery_country,
                 delivery_state='',
                 delivery_phone='',
                 customer_email='',
