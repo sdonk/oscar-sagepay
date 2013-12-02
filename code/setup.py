@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from setuptools import setup, find_packages
 
-from code.sagepay import VERSION
+from sagepay import VERSION
 
 
 MIN_OSCAR_VERSION = (0, 5)
@@ -24,11 +24,11 @@ setup(name='oscar-sagepay',
       author="Alessandro De Noia",
       author_email="alessandro.denoia@gmail.com",
       description="SagePay payment module for django-oscar",
-      long_description=open('README.rst').read(),
+      long_description=open('../README.rst').read(),
       keywords="Payment, SagePay, Oscar",
-      license=open('LICENSE').read(),
+      license=open('../LICENSE').read(),
       platforms=['linux'],
-      packages=find_packages(exclude=['tests*']),
+      packages=('sagepay','templates'),
       include_package_data=True,
       # See http://pypi.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
