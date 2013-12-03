@@ -25,7 +25,7 @@ It provides a new dashboard entry as well, to list all the transactions:
 License
 -------
 
-This package is release under the GPLv3 license.
+This package is release under the BSD license.
 
 
 Installation
