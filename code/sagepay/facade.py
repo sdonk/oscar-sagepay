@@ -45,6 +45,20 @@ class Facade(object):
         for l in basket.lines.all():
             description = description + l.product.title + ', '
 
+        # billing address can be "None" if a saved card is used, let's build the billing_address dictionary from the token
+        if card_token is not None and billing_address is None:
+            token = Token.objects.get(token=card_token)
+            tr = token.sagepaytransaction_set.all()[0]
+            billing_address = {
+                               'first_name': tr.billing_firstnames,
+                               'last_name': tr.billing_surname,
+                               'line1': tr.billing_address1,
+                               'line2': tr.billing_address2,
+                               'line4': tr.billing_city,
+                               'postcode': tr.billing_postcode,
+                               'country': tr.billing_country
+                               }
+
         # shipping address can be none for digital products, let's use billing address then
         if shipping_address is None:
             delivery_firstnames = billing_address['first_name']
@@ -53,7 +67,10 @@ class Facade(object):
             delivery_address2 = billing_address['line2']
             delivery_city = billing_address['line4']
             delivery_postcode = billing_address['postcode']
-            delivery_country = CountryCode.objects.get(name__iexact=billing_address['country'].printable_name)
+            if card_token is not None:
+                delivery_country = CountryCode.objects.get(name__iexact=billing_address['country'].name)
+            else:
+                delivery_country = CountryCode.objects.get(name__iexact=billing_address['country'].printable_name)
         else:
             delivery_firstnames=shipping_address.first_name
             delivery_surname=shipping_address.last_name
@@ -91,9 +108,12 @@ class Facade(object):
             transaction.billing_address2 = billing_address['line2']
             transaction.billing_city = billing_address['line4']
             transaction.billing_postcode = billing_address['postcode']
-            transaction.billing_country = CountryCode.objects.get(name__iexact=billing_address['country'].printable_name)
             transaction.billing_state = ''
             transaction.billing_phone = ''
+            if card_token is not None:
+                transaction.billing_country = CountryCode.objects.get(name__iexact=billing_address['country'].name)
+            else:
+                transaction.billing_country = CountryCode.objects.get(name__iexact=billing_address['country'].printable_name)
         else:
             transaction.billing_firstnames = shipping_address.first_name
             transaction.billing_surname = shipping_address.last_name
@@ -104,7 +124,6 @@ class Facade(object):
             transaction.billing_country = CountryCode.objects.get(name__iexact=shipping_address.country.printable_name)
             transaction.billing_state = ''
             transaction.billing_phone = ''
-
         if card_token is not None:
             transaction.token = Token.objects.get(token=card_token)
         transaction.save()
@@ -270,7 +289,9 @@ class Facade(object):
         sage_transaction.save()
         # the user wants to save the credit card details
         if 'Token' in response:
-            self._save_credit_card_token(response, sage_transaction)
+            token = self._save_credit_card_token(response, sage_transaction)
+            sage_transaction.token = token
+            sage_transaction.save()
         return post_response_model
 
     def _save_credit_card_token(self, response, sage_transaction):
